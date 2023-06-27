@@ -4,8 +4,6 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-// const encrypt = require("mongoose-encryption");
-// const md5 = require("md5");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 
@@ -21,8 +19,6 @@ const userSchema = new Schema({
     email: String,
     password: String
 });
-
-// userSchema.plugin(encrypt, {secret: process.env.SECRET, encryptedFields: ["password"]});
 
 const User = mongoose.model("User", userSchema);
 
@@ -69,7 +65,7 @@ app.post("/login", function(req, res) {
                         console.log("Successfully logged in User");
                         res.render("secrets");
                     } else {
-                        console.log("Wrong Password!")
+                        console.log("Wrong Password!");
                     }
                 });
             }

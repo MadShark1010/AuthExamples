@@ -69,7 +69,7 @@ app.post("/login", function(req, res) {
                         console.log("Successfully logged in User");
                         res.render("secrets");
                     } else {
-                        console.log("Wrong Password!");
+                        console.log("Wrong Password!")
                     }
                 });
             }
